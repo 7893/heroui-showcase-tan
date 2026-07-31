@@ -1,8 +1,29 @@
 @import "tailwindcss";
 
+/* ── Light theme (default) ── */
 :root {
-  --background: #000000;
-  --foreground: #ffffff;
+  --bg: #f8f7ff;
+  --bg-2: #eeedf8;
+  --fg: #0f0e1a;
+  --fg-muted: rgba(15, 14, 26, 0.5);
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(139, 92, 246, 0.15);
+  --scrollbar-thumb: rgba(139, 92, 246, 0.4);
+  --grid-line: rgba(139, 92, 246, 0.08);
+  --dot-bg: rgba(139, 92, 246, 0.06);
+}
+
+/* ── Dark theme ── */
+.dark {
+  --bg: #000000;
+  --bg-2: #0a0a0f;
+  --fg: #ffffff;
+  --fg-muted: rgba(255, 255, 255, 0.5);
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --scrollbar-thumb: rgba(139, 92, 246, 0.5);
+  --grid-line: rgba(139, 92, 246, 0.3);
+  --dot-bg: rgba(139, 92, 246, 0.04);
 }
 
 * {
@@ -14,10 +35,11 @@ html {
 }
 
 body {
-  background: #000000;
-  color: #ffffff;
+  background: var(--bg);
+  color: var(--fg);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* Scrollbar */
@@ -25,26 +47,26 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.05);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(139, 92, 246, 0.5);
+  background: var(--scrollbar-thumb);
   border-radius: 3px;
 }
 
 /* Glass effect */
 .glass {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--glass-bg);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--glass-border);
 }
 
 .glass-strong {
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--glass-bg);
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(40px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--glass-border);
 }
 
 /* Gradient text */
@@ -80,4 +102,17 @@ body {
   pointer-events: none;
   z-index: 9999;
   opacity: 0.4;
+}
+
+/* Light mode overrides for text readability */
+:root .text-white {
+  color: var(--fg);
+}
+:root .text-white\/60,
+:root .text-white\/50,
+:root .text-white\/40,
+:root .text-white\/30,
+:root .text-white\/25,
+:root .text-white\/20 {
+  color: var(--fg-muted);
 }
