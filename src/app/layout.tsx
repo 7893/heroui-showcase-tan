@@ -3,8 +3,8 @@ import "./globals.css";
 import { Providers } from "./providers";
 
 export const metadata: Metadata = {
-  title: "NEXUS — UI Showcase",
-  description: "A stunning Next.js + HeroUI showcase with glassmorphism and smooth animations",
+  title: "HeroUI Showcase",
+  description: "A glassmorphic UI showcase built with Next.js, HeroUI v3 and Framer Motion",
 };
 
 export default function RootLayout({
