@@ -66,7 +66,7 @@ export default function Header() {
         <motion.a
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
-          href="https://github.com/7893/nextui-showcase"
+          href="https://github.com/7893/heroui-showcase"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium bg-gradient-to-r from-purple-600 to-blue-600 text-white"
